@@ -67,12 +67,12 @@ Upon hitting submit, your job will be added to the queue and you will be prompte
 
 ![Table of Jobs](../../../assets/images/jobs.png)
 
-From here, you have a few options, which will be covered more in the [Job Table Guide](/docs/guides/job-table). But from here the status of the job will be displayed, and once it has been marked as `completed`, you can view the results, by hitting the "Download" button. This will download the data as a CSV file, which you can then view in your spreadsheet application of choice.
+From here, you have a few options, which will be covered more in the [Job Table Guide](/guides/job-table). But from here the status of the job will be displayed, and once it has been marked as `completed`, you can view the results, by hitting the "Download" button. This will download the data as a CSV file, which you can then view in your spreadsheet application of choice.
 
 ![Download Results](../../../assets/images/download-results.png)
 
 ## What's Next?
 
-Now that you have some data, you can query it in your own application, or even use the [AI integration](/docs/guides/ai-integration) to answer questions about the data.
+Now that you have some data, you can query it in your own application, or even use the [AI integration](/guides/ai) to answer questions about the data.
 
 
