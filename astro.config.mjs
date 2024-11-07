@@ -6,21 +6,19 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Scraperr Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/jaypyles/Scraperr',
 			},
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Quickstart', slug: 'guides/quickstart' },
+						{ label: 'Using the Scraperr API', slug: 'guides/api' },
+						{ label: 'Job Table', slug: 'guides/job-table' },
+						{ label: 'AI Integration', slug: 'guides/ai' },
 					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
 				},
 			],
 		}),
