@@ -63,6 +63,14 @@ The first step to submitting a scraping job is to enter in the URL of the websit
 
 ![Scraping Job](../../../assets/images/scrape-job.png)
 
+## Optional Job Settings
+
+- **Multi Page Scrape**: If the website you are scraping has multiple pages of data, you can enable multi page scraping. This will automatically click through all links within the same domain until there are no more pages to scrape.
+
+- **Custom JSON Headers**: If you need to send custom headers with your request, you can do so by entering them in the `Headers` field.
+
+- **Proxies**: Enter in a comma separated list of proxies to use for the request.
+
 Upon hitting submit, your job will be added to the queue and you will be prompted to go to the table of jobs.
 
 ![Table of Jobs](../../../assets/images/jobs.png)
