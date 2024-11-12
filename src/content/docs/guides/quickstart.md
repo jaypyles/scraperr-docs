@@ -7,7 +7,6 @@ description: A guide on how to get started with Scraperr.
 
 What is Scraperr? Scraperr is a self-hosted web scraping service that allows you to scrape websites and save the data to a database. The purpose of this application is to provide a simpler way to scrape websites, without all of the setup and configuration that you get with a tool like Puppeteer. The frontend of the app has been decoupled from the API which allows you to submit scraping jobs within other applications, or setup your own application to use the API.
 
-
 ## Installation
 
 1. Clone the repo:
@@ -20,31 +19,19 @@ git clone https://github.com/jaypyles/Scraperr.git
 
 ```yaml
 scraperr:
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.scraperr.rule=Host(`localhost`)" # change this to your domain, if not running on localhost
-      - "traefik.http.routers.scraperr.entrypoints=web" # websecure if using https
-      - "traefik.http.services.scraperr.loadbalancer.server.port=3000"
-
+  environment:
+    - NEXT_PUBLIC_API_URL=http://localhost:8000 # this is the URL of the Scraperr API
+    - SERVER_URL=http://scraperr_api:8000 # this is the url of the Scraperr API container 
 scraperr_api:
- environment:
-      - LOG_LEVEL=INFO
-      - MONGODB_URI=mongodb://root:example@webscrape-mongo:27017 # used to access MongoDB
-      - SECRET_KEY=your_secret_key # used to encode authentication tokens (can be a random string)
-      - ALGORITHM=HS256 # authentication encoding algorithm
-      - ACCESS_TOKEN_EXPIRE_MINUTES=600 # access token expire minutes
-  labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.scraperr_api.rule=Host(`localhost`) && PathPrefix(`/api`)" # change this to your domain, if not running on localhost
-        - "traefik.http.routers.scraperr_api.entrypoints=web" # websecure if using https
-        - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=/api"
-        - "traefik.http.routers.scraperr_api.middlewares=api-stripprefix"
-        - "traefik.http.services.scraperr_api.loadbalancer.server.port=8000"
-
+  environment:
+    - MONGODB_URI=mongodb://root:example@webscrape-mongo:27017 # used to access MongoDB
+    - SECRET_KEY=your_secret_key # used to encode authentication tokens (can be a random string)
+    - ALGORITHM=HS256 # authentication encoding algorithm
+    - ACCESS_TOKEN_EXPIRE_MINUTES=600 # access token expire minutes
 mongo:
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+  environment:
+    - MONGO_INITDB_ROOT_USERNAME: root
+    - MONGO_INITDB_ROOT_PASSWORD: example
 ```
 
 3. Use the `Makefile` to start up the containers:
@@ -53,7 +40,7 @@ mongo:
 make up
 ```
 
-After the containers are up and running, you can access the Scraperr API at `http://localhost` if using the default traefik router. Which should show you this page:
+After everything starts up, you can access the Scraperr API at `http://localhost:3000` (or whatever port you expose for the frontend) and you should see this page:
 
 ![Scraperr API](../../../assets/images/front-page.png)
 
