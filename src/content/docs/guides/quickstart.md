@@ -20,7 +20,7 @@ git clone https://github.com/jaypyles/Scraperr.git
 ```yaml
 scraperr:
   environment:
-    - NEXT_PUBLIC_API_URL=http://localhost:8000 # this is the URL of the Scraperr API
+    - NEXT_PUBLIC_API_URL=http://scraperr_api:8000 # this is the URL of the Scraperr API
     - SERVER_URL=http://scraperr_api:8000 # this is the url of the Scraperr API container 
 scraperr_api:
   environment:
@@ -40,7 +40,7 @@ mongo:
 make up
 ```
 
-After everything starts up, you can access the Scraperr API at `http://localhost:3000` (or whatever port you expose for the frontend) and you should see this page:
+After everything starts up, you can access the Scraperr API at `http://localhost` (or whatever port you expose for the frontend) and you should see this page:
 
 ![Scraperr API](../../../assets/images/front-page.png)
 
