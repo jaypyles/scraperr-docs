@@ -18,6 +18,7 @@ export default defineConfig({
 						{ label: 'Using the Scraperr API', slug: 'guides/api' },
 						{ label: 'Job Table', slug: 'guides/job-table' },
 						{ label: 'AI Integration', slug: 'guides/ai' },
+						{ label: 'Site Mapping', slug: 'guides/site-mapping' },
 					],
 				},
 			],
