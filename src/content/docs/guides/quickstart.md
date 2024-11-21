@@ -24,7 +24,6 @@ scraperr:
     - SERVER_URL=http://scraperr_api:8000 # this is the url of the Scraperr API container 
 scraperr_api:
   environment:
-    - MONGODB_URI=mongodb://root:example@webscrape-mongo:27017 # used to access MongoDB
     - SECRET_KEY=your_secret_key # used to encode authentication tokens (can be a random string)
     - ALGORITHM=HS256 # authentication encoding algorithm
     - ACCESS_TOKEN_EXPIRE_MINUTES=600 # access token expire minutes
