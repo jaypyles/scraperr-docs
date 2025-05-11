@@ -39,29 +39,6 @@ After everything starts up, you can access the Scraperr API at `http://localhost
 
 ![Scraperr API](../../../assets/images/front-page.png)
 
-## Optional Configuration
-
-### Disabling Registration
-
-If REGISTRATION_ENABLED is set to False, the application will disable new user registrations. In this mode, it relies on default admin credentials to provide access. If any of the following environment variables are not provided:
-
-- `DEFAULT_USER_EMAIL`
-
-- `DEFAULT_USER_PASSWORD`
-
-- `DEFAULT_USER_FULL_NAME`
-
-the application will exit on startup with an error, since it cannot create the required default user.
-
-```yaml
-scraperr_api:
-  environment:
-      - REGISTRATION_ENABLED=False
-      - DEFAULT_USER_EMAIL=admin@test.com
-      - DEFAULT_USER_PASSWORD=test
-      - DEFAULT_USER_FULL_NAME=test
-```
-
 ## Submitting a Scraping Job
 
 The first step to submitting a scraping job is to enter in the URL of the website you want to scrape. When you enter in the URL, you will see a table appear, where you can fill in the selectors for the data you want to scrape. You can name your elements and provide an `xpath` for the element you want to scrape.

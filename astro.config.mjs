@@ -19,6 +19,7 @@ export default defineConfig({
 						{ label: 'Job Table', slug: 'guides/job-table' },
 						{ label: 'AI Integration', slug: 'guides/ai' },
 						{ label: 'Site Mapping', slug: 'guides/site-mapping' },
+						{ label: 'Optional Configuration', slug: 'guides/optional-configuration' },
 					],
 				},
 			],
