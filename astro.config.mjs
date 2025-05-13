@@ -20,6 +20,7 @@ export default defineConfig({
 						{ label: 'AI Integration', slug: 'guides/ai' },
 						{ label: 'Site Mapping', slug: 'guides/site-mapping' },
 						{ label: 'Optional Configuration', slug: 'guides/optional-configuration' },
+						{ label: 'Helm Deployment', slug: 'guides/helm-deployment' },
 					],
 				},
 			],
