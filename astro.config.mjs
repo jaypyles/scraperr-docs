@@ -21,6 +21,7 @@ export default defineConfig({
 						{ label: 'Site Mapping', slug: 'guides/site-mapping' },
 						{ label: 'Optional Configuration', slug: 'guides/optional-configuration' },
 						{ label: 'Helm Deployment', slug: 'guides/helm-deployment' },
+						{ label: 'Advanced Options', slug: 'guides/advanced-options' },
 					],
 				},
 			],
