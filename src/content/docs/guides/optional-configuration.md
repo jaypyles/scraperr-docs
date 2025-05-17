@@ -53,3 +53,23 @@ scraperr_api:
       - USE_TLS=True | False
       - SCRAPERR_FRONTEND_URL=<url>
 ```
+
+## Disable Recordings
+
+Set the environment variable `RECORDINGS_ENABLED` in the `docker-compose.yml` to `false`
+
+```yml
+scraperr_api:
+  environment:
+      - RECORDINGS_ENABLED=false
+```
+
+## Connect to VNC
+
+Expose the port 5900, and use a VNC viewer to connect
+
+```yml
+scraperr_api:
+  ports:
+    - '5900:5900'
+```
