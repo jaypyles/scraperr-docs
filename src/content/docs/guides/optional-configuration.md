@@ -73,3 +73,22 @@ scraperr_api:
   ports:
     - '5900:5900'
 ```
+
+## Use your own database
+
+Scraperr API currently supports: SQLite, Postgres, and MySQL. The database defaults to using SQLite at `/scraperr/data/database.db `
+
+You must use the async driver for whichever you choose.
+
+```yaml
+scraperr_api:
+  environment:
+    # SQLite (default) — stores database file at /data/database.db inside container
+    - DATABASE_URL=sqlite+aiosqlite:///data/database.db
+
+    # PostgreSQL — connect to postgres container with asyncpg driver
+    - DATABASE_URL=postgresql+asyncpg://mypguser:mypgpassword@postgres:5432/mypgdb
+
+    # MySQL — connect to mysql container with aiomysql driver
+    - DATABASE_URL=mysql+aiomysql://mymysqluser:mymysqlpassword@mysql:3306/mymysqldb
+```
